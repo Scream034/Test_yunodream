@@ -10,10 +10,89 @@ config_version=5
 
 [application]
 
-config/name="Test2DSkills"
+config/name="Test2DSkills_paralax034"
+config/description="Проект создан в целях показа скиллов программиста через тестовое задание
+Автор: paralax034
+
+Реализовано:
+- Минимальная игровая карта
+- Передвижение игрока в 2д с условием не двигаться по диагонали
+- Минимальный инвентарь игрока
+- Сбор предметов на карте
+- Меню для игры с возможностями:
+	- Снять с паузы игру
+	- Сохранить текущее состояние игры
+	- Загрузить сохранённое состояние игры
+
+Технические особенности:
+- Сохранение является уникальными, не только под этот проект
+- Передвижение игрока использует в качестве основы анимационный плеер и сама механика
+
+Проект выполнен за: 8 часов"
+config/version="0.1"
+config/tags=PackedStringArray("test")
+run/main_scene="uid://dgqdjj3jd8y8g"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b1joiipnqtjfc"
+
+[autoload]
+
+Global="*res://scripts/core/Global.gd"
+
+[display]
+
+window/size/sharp_corners=true
+window/vsync/vsync_mode=2
 
 [dotnet]
 
 project/assembly_name="Test2DSkills"
+
+[global_group]
+
+to_save="Сохраняемые ноды"
+
+[gui]
+
+theme/default_font_antialiasing=0
+
+[input]
+
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+menu={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[physics]
+
+2d/run_on_separate_thread=true
+3d/physics_engine="Dummy"
+common/physics_interpolation=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+textures/default_filters/use_nearest_mipmap_filter=true
+textures/decals/filter=2
+textures/light_projectors/filter=2

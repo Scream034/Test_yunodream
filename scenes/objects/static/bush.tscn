@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://da2dbe8j42kwx"]
+
+[ext_resource type="Texture2D" uid="uid://js5d1l13w8nx" path="res://resources/sprites/bush.res" id="1_1t7qb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7qb"]
+size = Vector2(18, 21)
+
+[node name="Bush2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1t7qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_1t7qb")
