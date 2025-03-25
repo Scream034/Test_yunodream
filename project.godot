@@ -29,7 +29,7 @@ config/description="Проект создан в целях показа ски�
 - Передвижение игрока использует в качестве основы анимационный плеер и сама механика
 
 Проект выполнен за: 8 часов"
-config/version="0.1"
+config/version="0.2"
 config/tags=PackedStringArray("test")
 run/main_scene="uid://dgqdjj3jd8y8g"
 config/features=PackedStringArray("4.5", "Forward Plus")
