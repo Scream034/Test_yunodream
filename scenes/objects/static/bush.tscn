@@ -1,15 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://da2dbe8j42kwx"]
+[gd_scene load_steps=5 format=3 uid="uid://da2dbe8j42kwx"]
 
 [ext_resource type="Texture2D" uid="uid://js5d1l13w8nx" path="res://resources/sprites/bush.res" id="1_1t7qb"]
+[ext_resource type="Shader" uid="uid://chx0uj7oeujgv" path="res://scripts/shader/bush.gdshader" id="1_fmnih"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmnih"]
+shader = ExtResource("1_fmnih")
+shader_parameter/step_size = 0.005
+shader_parameter/speed_multiplier = 2.0
+shader_parameter/amplitude = 0.02
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7qb"]
-size = Vector2(18, 21)
+size = Vector2(18, 11)
 
 [node name="Bush2D" type="StaticBody2D"]
+z_index = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["trees"]]
+material = SubResource("ShaderMaterial_fmnih")
 texture = ExtResource("1_1t7qb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_1t7qb")

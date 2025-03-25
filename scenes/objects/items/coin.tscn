@@ -1,18 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx15yswwo6qpo"]
+[gd_scene load_steps=6 format=3 uid="uid://dx15yswwo6qpo"]
 
 [ext_resource type="Script" uid="uid://bnenbyq5ytu16" path="res://scripts/objects/items/BaseItem2D.gd" id="1_npg62"]
+[ext_resource type="Shader" uid="uid://ba6sreye75v76" path="res://scripts/shader/coin.gdshader" id="2_1f2yx"]
 [ext_resource type="Texture2D" uid="uid://ctsdgegn4akhm" path="res://resources/sprites/items/coin.res" id="2_xxg5f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ln3p"]
+shader = ExtResource("2_1f2yx")
+shader_parameter/blink_speed = 1.0
+shader_parameter/blink_intensity = 0.7
+shader_parameter/blink_duration = 2.0
+shader_parameter/no_blink_duration = 2.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxg5f"]
 size = Vector2(10, 11)
 
 [node name="Coin2D" type="Node2D" node_paths=PackedStringArray("area") groups=["to_save"]]
+z_index = 1
 script = ExtResource("1_npg62")
 area = NodePath("Area2D")
 item_id = "coin"
 metadata/_custom_type_script = "uid://bnenbyq5ytu16"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8ln3p")
 texture = ExtResource("2_xxg5f")
 
 [node name="Area2D" type="Area2D" parent="."]

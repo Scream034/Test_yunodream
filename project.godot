@@ -41,12 +41,18 @@ Global="*res://scripts/core/Global.gd"
 
 [display]
 
+window/size/mode=2
+window/size/extend_to_title=true
 window/size/sharp_corners=true
 window/vsync/vsync_mode=2
 
 [dotnet]
 
 project/assembly_name="Test2DSkills"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/CPToCS2D/plugin.cfg")
 
 [global_group]
 

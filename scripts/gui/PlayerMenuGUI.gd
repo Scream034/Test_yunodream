@@ -4,11 +4,13 @@ class_name PlayerMenuGUI
 @export var start_button: BaseButton
 @export var save_button: BaseButton
 @export var load_button: BaseButton
+@export var exit_button: BaseButton
 
 func _ready() -> void:
 	start_button.pressed.connect(_on_start_button_pressed)
 	save_button.pressed.connect(_on_save_button_pressed)
 	load_button.pressed.connect(_on_load_button_pressed)
+	exit_button.pressed.connect(_on_exit_button_pressed)
 
 func _unhandled_key_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("menu"):
@@ -41,3 +43,6 @@ func _on_save_button_pressed() -> void:
 func _on_load_button_pressed() -> void:
 	hide_menu()
 	Global.load_game()
+
+func _on_exit_button_pressed() -> void:
+	Global.quit_game()
